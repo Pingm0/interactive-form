@@ -40,30 +40,21 @@ design.addEventListener('change', (e) => {
     
     const selection = e.target.value;
     //colorOpstion[0].style.display = "none";
-    const tempColors = []
-
-    
-
-
-
-    
-    
+   
+   
    for (let i = 0; i < colorOpstion.length; i++) {
-       if (colorOpstion[i].dataset.theme === selection) {
-            tempColors.push(colorOpstion[i].outerHTML)
-            // console.log(tempColors)
-            // console.log(tempColors.length)
-
-            
+       if ( colorOpstion[i].outerText === "Select a design theme above") {
+            colorOpstion[i].style.display = "none";
        }
-    //    else {
-    //     colorOpstion[i].style.display = "block";
-    //    }
-       
+       if (colorOpstion[i].dataset.theme !== selection) {
+            colorOpstion[i].style.display = "none";
+       }
+       else {
+
+        colorOpstion[i].style.display = "block";
+
+       }       
    }
-
-   colorDropdown.innerHTML =tempColors;
-
 });
 
 
