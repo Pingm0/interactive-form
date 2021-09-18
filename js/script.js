@@ -43,18 +43,18 @@ design.addEventListener('change', (e) => {
    
    
    for (let i = 0; i < colorOpstion.length; i++) {
-       if ( colorOpstion[i].outerText === "Select a design theme above") {
-            colorOpstion[i].style.display = "none";
-       }
        if (colorOpstion[i].dataset.theme !== selection) {
-            colorOpstion[i].style.display = "none";
+            //colorOpstion[i].style.display = "none";
+            colorOpstion[i].setAttribute('hidden', 'false');
        }
        else {
 
-        colorOpstion[i].style.display = "block";
+        //colorOpstion[i].style.display = "block";
+        colorOpstion[i].setAttribute('selected', 'true');
 
        }       
    }
+   //colorOpstion[0].setAttribute('selected', 'true');
 });
 
 
