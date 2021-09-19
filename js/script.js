@@ -82,6 +82,7 @@ activities.addEventListener('click', (e) => {
 
 // Credicat card Section
 const creditCard = document.querySelector("#credit-card")
+console.log(creditCard.className)
 const paypal = document.querySelector("#paypal")
 const bitcoin = document.querySelector("#bitcoin")
 const paymentSelector = document.querySelector("#payment")
@@ -91,6 +92,25 @@ paymentSelector.firstElementChild.nextElementSibling.setAttribute("selected", tr
 paypal.hidden = true;
 bitcoin.hidden = true;
 
+paymentSelector.addEventListener("change", (e) => {
+
+    const payMethod = e.target.value ;
+    const paymentsTypes = [creditCard,paypal,bitcoin]
+
+    for (let i = 0; i < paymentsTypes.length; i++) {
+
+        if (payMethod == paymentsTypes[i].className) {
+            //paymentsTypes[i].hidden = false ;
+            paymentsTypes[i].hidden = false;
+            
+        }
+
+        else {
+            paymentsTypes[i].hidden = true;
+        }     
+    }
+
+/*
 paymentSelector.addEventListener("change", (e) => {
 
     const showPaySection = e.target.value ;
@@ -113,7 +133,12 @@ paymentSelector.addEventListener("change", (e) => {
         bitcoin.hidden = false;
 
     }
+*/
+
+
     
+
+  
 
     
 
