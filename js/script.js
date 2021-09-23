@@ -110,43 +110,24 @@ paymentSelector.addEventListener("change", (e) => {
         }     
     }
 
-/*
-paymentSelector.addEventListener("change", (e) => {
-
-    const showPaySection = e.target.value ;
-
-    if (showPaySection == "credit-card") {
-        creditCard.hidden = false;
-        paypal.hidden = true;
-        bitcoin.hidden = true;
-    }
-    else if (showPaySection == "paypal") {
-        creditCard.hidden = true;
-        paypal.hidden = false;
-        bitcoin.hidden = true;
-    }
-
-    else {
-        
-        creditCard.hidden = true;
-        paypal.hidden = true;
-        bitcoin.hidden = false;
-
-    }
-*/
-
-
-    
-
-  
-
-    
-
-    // const getOptions = paymentSelector.children
-    // console.log(getOptions)
-
-
 })
+
+//Form Validation helper functions Section
+
+const nameVal = (name) => {
+  return  /^[a-zA-Z]+ ?[a-zA-Z]*$/.test(name);
+}
+
+const emailVal = (email) => {
+    return  /^\D[^@\s]+@\S[^@\s]+\.[^@\s]+$/.test(email);
+  }
+
+
+
+  console.log(emailVal("zoom779@gmail.com"))
+
+
+
 
 
 
