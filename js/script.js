@@ -6,6 +6,7 @@ const otherJobRole = document.querySelector("#other-job-role");
 const design = document.querySelector("#design");
 const colorDropdown = document.querySelector("#color");
 const totalPlaceholder = document.querySelector(".activities-cost")
+const form = document.querySelector('form');
 let amount = 0;
 
 const colorOption = colorDropdown.children
@@ -114,8 +115,10 @@ paymentSelector.addEventListener("change", (e) => {
 
 //Form Validation helper functions Section
 
-const nameVal = (name) => {
-  return  /^[a-zA-Z]+ ?[a-zA-Z]*$/.test(name);
+const nameVal = () => {
+   return /^[\w]+\s*[\w]+$/.test(nameInput);
+   
+
 }
 
 const emailVal = (email) => {
@@ -123,7 +126,23 @@ const emailVal = (email) => {
   }
 
 
+  form.addEventListener('submit', (e) => {
 
+    if(nameVal()) {
+        console.log('Submmited')
+    }
+    else
+    {
+        e.preventDefault()
+        console.log('not')
+    }
+
+
+  })
+
+
+
+  console.log(nameVal())
   console.log(emailVal("zoom779@gmail.com"))
 
 
