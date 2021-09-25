@@ -1,6 +1,7 @@
 // Below are place holders for the HTML elements
 
 const nameInput = document.querySelector("#name");
+const emailInput = document.querySelector("#email")
 const jobRoleSelect = document.querySelector("#title");
 const otherJobRole = document.querySelector("#other-job-role");
 const design = document.querySelector("#design");
@@ -116,20 +117,36 @@ paymentSelector.addEventListener("change", (e) => {
 //Form Validation helper functions Section
 
 const nameVal = () => {
-   return /^[\w]+\s*[\w]+$/.test(nameInput);
+   return /(^[a-z]+\s?[a-z]+)$/i.test(nameInput.value);
    
 
 }
 
-const emailVal = (email) => {
-    return  /^\D[^@\s]+@\S[^@\s]+\.[^@\s]+$/.test(email);
+const emailVal = () => {
+    return  /^\D[^@\s]+@\S[^@\s]+\.[^@\s\d]+$/.test(emailInput.value);
+  }
+
+  const activityVal = () => {
+
+    if (amount){
+        return true;
+    }
+    else {
+        return false;
+    }
+
+  }
+
+  const creditCardVal = () => {
+      
   }
 
 
   form.addEventListener('submit', (e) => {
 
-    if(nameVal()) {
+    if(nameVal() && emailVal() && activityVal()) {
         console.log('Submmited')
+        e.preventDefault()
     }
     else
     {
@@ -142,8 +159,8 @@ const emailVal = (email) => {
 
 
 
-  console.log(nameVal())
-  console.log(emailVal("zoom779@gmail.com"))
+  //console.log(nameVal())
+  console.log(emailVal("zoom1779gmail.com"))
 
 
 
